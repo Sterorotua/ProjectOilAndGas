@@ -1,0 +1,15 @@
+{% extends "CoreBundle::mainLayout.html.twig" %}
+
+{% block title %}{{ parent() }}Fleet{% endblock %}
+
+{% block header_content %}
+    <h1>Fleet</h1>
+    <ol class="breadcrumb">
+        <li><a href="{{ path('_home') }}"><i class="fa fa-dashboard"></i> O&G Market</a></li>
+        <li><a href="{{ path('_fleet') }}"> Fleet</a></li>
+    </ol>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}

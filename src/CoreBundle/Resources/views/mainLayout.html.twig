@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>
+            {% block title %}O&G - {% endblock %}
+        </title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        
+        {% block css %}
+            <!-- Bootstrap -->
+            <link rel="stylesheet" href="{{ asset('bundles/core/css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+:
+            <!-- AdminLTE -->
+            <link rel="stylesheet" href="{{ asset('bundles/core/css/AdminLTE.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/core/css/skin-blue.css') }}">
+            
+            <!-- Bootstrap Select SilvioMoretto -->
+            <link rel="stylesheet" href="{{ asset('bundles/core/css/bootstrap-select.min.css') }}">
+
+            <!-- jQuery UI -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+
+            <!-- jQuery UI Datepicker -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker.min.css">
+
+            <!-- iCheck -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/skins/flat/_all.css">
+            
+            <!-- jQuery DataTable -->
+            <link rel="stylesheet" href="{{ asset('bundles/core/css/dataTables.bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('bundles/core/css/responsive.bootstrap.min.css') }}">
+            <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css">
+            <link rel="stylesheet" href="{{ asset('bundles/core/css/customCss.css') }}">
+            
+        {% endblock %}        
+        
+        <!-- Favicon OilAndGas Market -->
+        <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
+        
+        <!-- Google Maps Marker -->
+        <a href="{{ asset('images/oilMarker.png') }}" id="oilMarker"></a>
+        <a href="{{ asset('images/helipad.png') }}" id="helipad"></a>
+        <a href="{{ asset('images/oilAndGasArea.png') }}" id="oilNGasArea"></a>
+        
+    </head>
+    
+    <body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
+        <div class="wrapper">
+            
+            <!-- Main Header -->
+            <header class="main-header">
+                
+                <!-- Logo -->
+                <a href="{{ path('_home') }}" class="logo">
+                    <span class="logo-lg">
+                        <img src="{{asset('images/Logo.png')}}" class="icon">
+                    </span>
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini">
+                        <img src="{{asset('images/logo-mini.png')}}" class="icon">
+                    </span>
+                </a>
+                
+                <!-- Header Navbar -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <!-- Navbar Right Menu -->
+                    <div class="navbar-custom-menu">
+                        <form class="navbar-form navbar-left hidden-xs hidden-md hidden-sm" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="navbar-search-input" placeholder="Search">
+                            </div>
+                        </form>
+                        <ul class="nav navbar-nav">      
+                            <li>
+                                <a href="{{ path('_home') }}">
+                                    <i class="fa fa-home"></i>
+                                    <span class="hidden-xs">Home</span>
+                                </a>
+                            </li>
+                            <li class="dropdown notifications-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-briefcase"></i>
+                                    <span class="hidden-xs">My Business</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <ul class="menu">
+                                            <li>
+                                                <a href="{{ path('_contracts') }}">
+                                                    <span>Contract</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('_tenders') }}">
+                                                    <span>Tender</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('_projects') }}">
+                                                    <span>Project</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown notifications-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-plane"></i>
+                                    <span class="hidden-xs">Aircraft</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <ul class="menu">
+                                            <li>
+                                                <a href="{{ path('_base') }}">
+                                                    <span>Bases</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('_fleet') }}">
+                                                    <span>Helicopters</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('_operator') }}">
+                                                    <span>Operators</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown notifications-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-industry"></i>
+                                    <span class="hidden-xs">Oil Activity</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <!-- inner menu: contains the actual data -->
+                                        <ul class="menu">
+                                            <li>
+                                                <a href="{{ path('_oilCompany') }}">
+                                                    <span>Oil Companies</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('_oilCountry') }}">
+                                                    <span>Oil Countries</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ path('_platforms') }}">
+                                                    <span>Plaforms</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <li class="dropdown notifications-menu">
+                                    <a href="#" class="dropdown-toggle hidden-xs" data-toggle="dropdown">
+                                        <i class="fa fa-wrench"></i>
+                                        <span class="hidden-xs">Admin Tools</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <!-- inner menu: contains the actual data -->
+                                            <ul class="menu">
+                                                <li  class="hidden-xs">
+                                                    <a href="{{ path('_admin') }}">
+                                                        <span class="hidden-xs">Admin Interface</span>
+                                                    </a>
+                                                </li>
+                                                <li  class="hidden-xs">
+                                                    <a href="{{ path('_account') }}">
+                                                        <span class="hidden-xs">New User</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                            {% endif %}
+                            <li>
+                                <a href="{{ path('_logout') }}">
+                                    <i class="fa fa-power-off"></i>
+                                    <span class="hidden-xs">Logout</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header> 
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    
+                    <!-- search form (Optional) -->
+                    <form action="#" method="get" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                        
+                    </form>
+                    <!-- /.search form -->
+                    
+                    <!-- Sidebar Menu -->
+                    <ul class="sidebar-menu">
+                        <li class="treeview">
+                            <a href="{{ path('_home') }}">
+                                <i class="fa fa-home"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="treeview">
+                             <a href="{{ path('_contracts') }}">
+                                <i class="fa fa-briefcase"></i>
+                                <span>My Business</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="treeview">
+                                    <a href="{{ path('_contracts') }}">
+                                        <i class="fa fa-circle-o"></i>
+                                        <span>Contracts</span>
+                                    </a>
+                                </li>
+                                <li cl ass="treeview">
+                                    <a href="{{ path('_tenders') }}">
+                                        <i class="fa fa-circle-o"> </i>
+                                        <span>Tenders</span>
+                                    </a>
+                                </li>
+                                <li cl ass="treeview">
+                                    <a href="{{ path('_projects') }}">
+                                        <i class="fa fa-circle-o"> </i>
+                                        <span>Projects</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-plane"></i>
+                                <span>Aircraft</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li cl ass="treeview">
+                                    <a href="{{ path('_base') }}">
+                                        <i class="fa fa-circle-o"> </i>
+                                        <span>Bases</span>
+                                    </a>
+                                </li>
+                                <li class="treeview">
+                                    <a href="{{ path('_fleet') }}">
+                                        <i class="fa fa-circle-o"></i>
+                                        <span>Helicopters</span>
+                                    </a>
+                                </li>   
+                                <li cl ass="treeview">
+                                    <a href="{{ path('_operator') }}">
+                                        <i class="fa fa-circle-o"> </i>
+                                        <span>Operators</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-industry"></i>
+                                <span>Oil Activity</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li class="treeview">
+                                    <a href="{{ path('_oilCompany') }}">
+                                        <i class="fa fa-circle-o"></i>
+                                        <span>Oil Companies</span>
+                                    </a>
+                                </li>
+                                <li cl ass="treeview">
+                                    <a href="{{ path('_oilCountry') }}">
+                                        <i class="fa fa-circle-o"> </i>
+                                        <span>Oil Countries</span>
+                                    </a>
+                                </li>
+                                <li cl ass="treeview">
+                                    <a href="{{ path('_platforms') }}">
+                                        <i class="fa fa-circle-o"> </i>
+                                        <span>Platforms</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li class="treeview hidden-xs">
+                                <a href="#">
+                                    <i class="fa fa-wrench"></i>
+                                    <span>Admin Tools</span>
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li class="treeview">
+                                        <a href="{{ path('_admin') }}">
+                                            <i class="fa fa-circle-o"></i>
+                                            <span>Admin Interface</span>
+                                        </a>
+                                    </li>
+                                    <li cl ass="treeview">
+                                        <a href="{{ path('_account') }}">
+                                            <i class="fa fa-circle-o"> </i>
+                                            <span>New User</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        {% endif %}
+                        <li class="treeview" >
+                            <a href="{{ path('_logout') }}">
+                                <i class="fa fa-power-off"></i>
+                                <span>Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.sidebar-menu -->
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                
+                <section class="content-header">
+                    {% block header_content %}
+                        
+                    {% endblock %}
+                </section>
+                
+                
+                <!-- Main content -->
+                <section class="content">
+                    
+                    {% block page_content %}
+                        
+                    {% endblock %}
+                    
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+            
+            <!-- Main Footer -->
+            <footer class="main-footer">
+                <!-- To the right -->
+                <div class="pull-right hidden-xs">
+                    <b>Author :</b> Stéphane TEROROTUA
+                </div>
+                <!-- Default to the left -->
+                <strong>Copyright &copy; 2017 <a href="http://www.airbushelicopters.com/website/en/ref/home.html">Airbus Helicopters</a>.</strong> All rights reserved.
+            </footer>
+            
+        </div>
+        <!-- ./wrapper -->
+        
+        {% block modal %}
+            
+        {% endblock %}
+        
+        {% block javascripts %}
+            
+            <!-- FOSJsRouting -->
+            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+            
+            <!-- jQuery 2.2.0 -->
+            <script src="{{ asset('bundles/core/js/jQuery-2.2.0.min.js') }}"></script>
+            
+            <!-- jQuery UI -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+            
+                        <!-- Bootstrap 3.3.6 -->
+            <script src="{{ asset('bundles/core/js/bootstrap.min.js') }}"></script>
+            
+            <!-- AdminLTE App -->
+            <script src="{{ asset('bundles/core/js/app.min.js') }}"></script>
+            
+            <!-- Select Silvio Moretto -->
+            <script src="{{ asset('bundles/core/js/bootstrap-select.js') }}"></script>
+            
+            <!-- jQuery DataTable -->
+            <script src="{{ asset('bundles/core/js/datatables.min.js') }}"></script>
+            <script src="{{ asset('bundles/core/js/dataTables.bootstrap.min.js') }}"></script>
+            <script src="{{ asset('bundles/core/js/responsive.bootstrap.min.js') }}"></script>
+            
+            <!-- jQuery Datepicker -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js"></script>
+            
+            <!-- Google Map -->
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcMTNu9gsFeWES8OfxqaQkWmE04WPJITM&language=en&libraries=geometry,drawing"></script>
+            
+            <!-- Twitter Wizard -->
+            <script src="{{ asset('bundles/core/js/jquery.bootstrap.wizard.js') }}"></script>
+            
+            <!-- Fileinput JS -->
+            <script src="{{ asset('bundles/core/js/fileinput.min.js') }}"></script>
+            
+            <!-- iCheck -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.js"></script>
+            
+            <!-- Map general functions -->
+            <script src="{{ asset('bundles/core/js/customGeneralFunctions.js') }}"></script>
+         
+        {% endblock %}
+        
+    </body>
+</html>
+

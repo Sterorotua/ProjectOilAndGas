@@ -1,0 +1,13 @@
+_home_default:
+    path:       /
+    defaults:   { _controller: HomeBundle:Home:index }
+
+_home:
+    path:       /home
+    defaults:   { _controller: HomeBundle:Home:index }
+    
+_home_map:
+    path:       /home/map
+    defaults:   { _controller: HomeBundle:Home:mapInit }
+    options:
+        expose: true

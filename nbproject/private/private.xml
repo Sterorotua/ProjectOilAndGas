@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/config/parameters.yml.dist</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/config/services.yml</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/cache/prod/doctrine/orm/Proxies/__CG__DatabaseBundleEntityAircraftFleet.php</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/config/config_dev.yml</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/phpunit.xml.dist</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/web/app.php</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/config/register_content.html.twig</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/config/security.yml</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/README.md</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/composer.phar</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/config/routing_dev.yml</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/composer.lock</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/config/routing.yml</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/logs/prod.log</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/config/config_prod.yml</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/config/config_test.yml</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/web/app_dev.php</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/cache/prod/templates.php</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/nbproject/project.properties</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/autoload.php</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/config/config.yml</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/bootstrap.php.cache</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/config/parameters.yml</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/config/register.html.twig</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/config.php</file>
+            <file>file:/Applications/MAMP/htdocs/OilAndGasApplication/app/cache/prod/appProdDebugProjectContainer.php</file>
+        </group>
+    </open-files>
+</project-private>

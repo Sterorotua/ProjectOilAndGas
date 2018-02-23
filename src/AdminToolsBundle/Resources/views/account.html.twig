@@ -1,0 +1,15 @@
+{% extends "CoreBundle::mainLayout.html.twig" %}
+
+{% block title %}{{ parent() }}Add Account{% endblock %}
+
+{% block header_content %}
+    <h1>Account</h1>
+    <ol class="breadcrumb">
+        <li><a href="{{ path('_home') }}"><i class="fa fa-dashboard"></i> O&G Market</a></li>
+        <li><a href="{{ path('_account') }}"> My Account</a></li>
+    </ol>
+{% endblock %}
+
+{% block page_content %}
+    {% render url('fos_user_registration_register') %}
+{% endblock %}

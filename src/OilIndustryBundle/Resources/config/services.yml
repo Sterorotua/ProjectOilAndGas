@@ -1,0 +1,4 @@
+services:
+#    oil_industry.example:
+#        class: OilIndustryBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

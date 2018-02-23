@@ -1,0 +1,49 @@
+_admin:
+    path:       /admin
+    defaults:   { _controller: AdminToolsBundle:AdminTools:index }
+    
+_account:
+    path:       /account
+    defaults:   { _controller: AdminToolsBundle:AdminTools:account }
+    
+_business_area:
+    path:       /businessArea
+    defaults:   { _controller: AdminToolsBundle:AdminTools:businessAreaAll }
+    
+_add_base:
+    path:       /addBase
+    defaults:   { _controller: AdminToolsBundle:AdminTools:addAirport }
+    options:
+        expose: true
+        
+_add_business_area:
+    path:       /addBusinessArea
+    defaults:   { _controller: AdminToolsBundle:AdminTools:createCustomBusinessArea }
+    options:
+        expose: true
+        
+_attribute_business_area:
+    path:       /attributeBusinessArea
+    defaults:   { _controller: AdminToolsBundle:AdminTools:attributeBusinessArea }
+    options:
+        expose: true
+        
+_add_operator_super_groups:
+    path:       /addGlobalGroup
+    defaults:   { _controller: AdminToolsBundle:AdminTools:operatorGroups }
+    
+_add_operator_group:
+    path:       /addOperatorGroup
+    defaults:   { _controller: AdminToolsBundle:AdminTools:addOperatorGroup }
+    options:
+        expose: true
+        
+_add_oil_company:
+    path:       /addOilCompany
+    defaults:   { _controller: AdminToolsBundle:AdminTools:addOilCompany }
+    options:
+        expose: true
+        
+_update_project_name:
+    path:       /updateProjectName
+    defaults:   { _controller: AdminToolsBundle:AdminTools:updateProjectsName }

@@ -1,0 +1,13 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: localhost
+    database_port: 21
+    database_name: ahlaajjj_oilandgas
+    database_user: root
+    database_password: root
+    mailer_transport: smtp
+    mailer_host: ahlab.website
+    mailer_user: noreply@ahlab.website
+    mailer_password: 'airbus123#'
+    mailer_port : 465
+    secret: ff0136cdadc5b935154f2ee291d31a1bd6454a2a

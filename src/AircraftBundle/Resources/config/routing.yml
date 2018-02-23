@@ -1,0 +1,11 @@
+_base:
+    path:       /aircraft/base
+    defaults:   { _controller: AircraftBundle:Base:index }
+    
+_fleet:
+    path:       /aircraft/fleet
+    defaults:   { _controller: AircraftBundle:Helicopter:index }
+    
+_operator:
+    path:       /aircraft/operator
+    defaults:   { _controller: AircraftBundle:Operator:index }

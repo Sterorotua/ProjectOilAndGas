@@ -1,0 +1,97 @@
+Agusta Westland,AW109,A109 E_Power,Light
+Agusta Westland,AW109,A109 SP_Grand New,Light
+Agusta Westland,AW119,A119,Light
+Agusta Westland,AW119,AW119 Ke_MkII,Light
+Agusta Westland,AW139,AW139,Medium
+Agusta Westland,AW169,AW169,Medium
+Agusta Westland,AW189,AW189,Large Medium
+Agusta Westland,B206_AB,AB206 B,Light
+Agusta Westland,B212_H-1 N_AB,AB212,Medium
+Agusta Westland,S-61_AS,ASH-3 D,Heavy
+Airbus Helicopters,AS355,AS355 F2,Light
+Airbus Helicopters,AS355,AS355 NP,Light
+Airbus Helicopters,AS365,AS365 N2,Medium
+Airbus Helicopters,AS365,AS365 N3,Medium
+Airbus Helicopters,AS365,AS365 N3+,Medium
+Airbus Helicopters,AS365,SA365 C2,Medium
+Airbus Helicopters,AS365,SA365 C3,Medium
+Airbus Helicopters,AS365,SA365 N,Medium
+Airbus Helicopters,BK117,BK117 C1,Light
+Airbus Helicopters,BO105,BO105 C,Light
+Airbus Helicopters,BO105,BO105 CBS4,Light
+Airbus Helicopters,BO105,BO105 CBS5,Light
+Airbus Helicopters,BO105,BO105 S,Light
+Airbus Helicopters,H120,EC120 B,Light
+Airbus Helicopters,H125,AS350 B2,Light
+Airbus Helicopters,H125,AS350 B3,Light
+Airbus Helicopters,H125,AS350 B3e,Light
+Airbus Helicopters,H125,AS350 BA,Light
+Airbus Helicopters,H125,AS350 D,Light
+Airbus Helicopters,H125,HL350 FX2,Light
+Airbus Helicopters,H125,S350 B2-SD2,Light
+Airbus Helicopters,H130,EC130 B4,Light
+Airbus Helicopters,H130,EC130 T2,Light
+Airbus Helicopters,H135,EC135 P2,Light
+Airbus Helicopters,H135,EC135 P2e,Light
+Airbus Helicopters,H135,EC135 P2i,Light
+Airbus Helicopters,H135,EC135 T1,Light
+Airbus Helicopters,H135,EC135 T2i,Light
+Airbus Helicopters,H145,BK117 C2,Light
+Airbus Helicopters,H145,BK117 D2,Light
+Airbus Helicopters,H155,EC155 B,Medium
+Airbus Helicopters,H155,EC155 B1,Medium
+Airbus Helicopters,H175,EC175,Large Medium
+Airbus Helicopters,H215,AS332 L,Heavy
+Airbus Helicopters,H215,AS332 L1,Heavy
+Airbus Helicopters,H215,AS332 L2,Heavy
+Airbus Helicopters,H225,EC225 LP,Heavy
+Airbus Helicopters,SA313/318,SA315 B_Lama,Light
+Airbus Helicopters,SA316/319,SA316 B,Light
+Airbus Helicopters,SA316/319,SA3160,Light
+Bell,B204/205_H-1,B205 A1,Medium
+Bell,B206 L_Long Ranger,B206 L1,Light
+Bell,B206 L_Long Ranger,B206 L3,Light
+Bell,B206 L_Long Ranger,B206 L4,Light
+Bell,B206 L_Long Ranger,B206 LST,Light
+Bell,B206 L_Long Ranger,B206 LT,Light
+Bell,B206_Jet Ranger,B206 A,Light
+Bell,B206_Jet Ranger,B206 B,Light
+Bell,B206_Jet Ranger,B206 BII,Light
+Bell,B206_Jet Ranger,B206 BIII,Light
+Bell,B212_H-1 N,B212,Medium
+Bell,B214,B214 ST,Heavy
+Bell,B222,B222 B,Light
+Bell,B230,B230,Light
+Bell,B407,B407,Light
+Bell,B407,B407 GX,Light
+Bell,B412,B412,Medium
+Bell,B412,B412 EP,Medium
+Bell,B412,B412 HP,Medium
+Bell,B412,B412 SP,Medium
+Bell,B427,B427,Light
+Bell,B429,B429,Light
+Bell,B430,B430,Light
+Japanese Manufacturers,BK117_KB,KB117 B1,Light
+Japanese Manufacturers,BK117_KB,KB117 B2,Light
+Japanese Manufacturers,BK117_KB,KB117 C1,Light
+Japanese Manufacturers,H145_KEC,KB117 C2,Light
+MDHI,H369_MD500,H369_MD500 D,Light
+MDHI,H369_MD500,H369_MD500 E,Light
+Russian Helicopters,Mi-8/17,Mi-17 (Utility),Heavy
+Russian Helicopters,Mi-8/17,Mi-17 1V (Utility = MI-8 MTV1),Heavy
+Russian Helicopters,Mi-8/17,Mi-17 V7,Heavy
+Russian Helicopters,Mi-8/17,Mi-171 (Utility = MI-8 AMT),Heavy
+Russian Helicopters,Mi-8/17,Mi-172,Heavy
+Russian Helicopters,Mi-8/17,Mi-8 MTV-1,Heavy
+Russian Helicopters,Mi-8/17,Mi-8 T,Heavy
+Sikorsky,S-61,S-61 N,Heavy
+Sikorsky,S-64,S-64 F,Heavy
+Sikorsky,S-76,S-76 A,Medium
+Sikorsky,S-76,S-76 A+,Medium
+Sikorsky,S-76,S-76 A++,Medium
+Sikorsky,S-76,S-76 B,Medium
+Sikorsky,S-76,S-76 C,Medium
+Sikorsky,S-76,S-76 C+,Medium
+Sikorsky,S-76,S-76 C++,Medium
+Sikorsky,S-76,S-76 D,Medium
+Sikorsky,S-92,S-92 A,Heavy

@@ -1,0 +1,1005 @@
+{% extends "CoreBundle::mainLayout.html.twig" %}
+
+{% block title %}{{ parent() }}Oil Company{% endblock %}
+
+{% block css %}{{ parent() }}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
+{% endblock %}
+
+{% block header_content %}
+    <h1>Oil Companies</h1>
+    <ol class="breadcrumb">
+        <li><a href="{{ path('_home') }}"><i class="fa fa-dashboard"></i> O&G Market</a></li>
+        <li><a href="{{ path('_oilCompany') }}"> Oil Company</a></li>
+    </ol>
+{% endblock %}
+
+{% block page_content %}
+	<div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4><i class="icon fa fa-warning"></i> Attention !</h4>
+                Données statiques et fictives
+              </div>
+	<div class="row">
+		<!-- barre d'outil -->
+		<div class="col-md-12">
+          <div class="box box-solid">
+            <div class="box-body">
+            	<div class="row">
+            		<div class="col-md-6">
+            			<div class="btn-group bootstrap-select show-tick select2 form-control"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" data-id="contract_operator"><span class="filter-option pull-left">Oil company</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open"><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off"></div><div class="bs-actionsbox"><div class="btn-group btn-group-sm btn-block"><button type="button" class="actions-btn bs-select-all btn btn-default">Select All</button><button type="button" class="actions-btn bs-deselect-all btn btn-default">Deselect All</button></div></div><ul class="dropdown-menu inner" role="menu"></ul></div><select id="contract_operator" name="contract_operator[]" class="select2 form-control" multiple="multiple" tabindex="-98">
+                                                            
+                       </select></div>
+            		</div>
+            		<div class="col-md-6">
+		              <div class="btn-group bootstrap-select show-tick select2 form-control"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" data-id="contract_operator"><span class="filter-option pull-left">Country</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open"><div class="bs-searchbox"><input type="text" class="form-control" autocomplete="off"></div><div class="bs-actionsbox"><div class="btn-group btn-group-sm btn-block"><button type="button" class="actions-btn bs-select-all btn btn-default">Select All</button><button type="button" class="actions-btn bs-deselect-all btn btn-default">Deselect All</button></div></div><ul class="dropdown-menu inner" role="menu"></ul></div><select id="contract_operator" name="contract_operator[]" class="select2 form-control" multiple="multiple" tabindex="-98">
+                                                            
+                       </select></div>
+		              
+		              <!-- /.form-group -->
+		            </div>
+            	</div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- content -->
+		<div class="col-md-12">
+          <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#tab_1" data-toggle="tab">Map</a></li>
+              <li><a href="#tab_2" data-toggle="tab">Table</a></li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab_1">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11589.59158177708!2d5.237109650000001!3d43.4314052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1467357395384" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>				
+              <!-- /.tab-pane -->
+              <div class="tab-pane" id="tab_2">
+                <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Area</th>
+                  <th>Country</th>
+                  <th>Operator</th>
+                  <th>Qty</th>
+                  <th>Type</th>
+                  <th>Platforms in service</th>
+                  <th>Future platforms</th>
+                </tr>
+                </thead>
+                <tbody>
+	           		<tr>
+						<td>Vienna</td>
+						<td>Gabon</td>
+						<td>Leo Vivamus Nibh Corp.</td>
+						<td>44</td>
+						<td>N174</td>
+						<td>7</td>
+						<td>6</td>
+					</tr>
+					<tr>
+						<td>San José</td>
+						<td>Mauritania</td>
+						<td>Dolor Dolor Limited</td>
+						<td>25</td>
+						<td>N336</td>
+						<td>8</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>Vienna</td>
+						<td>Comoros</td>
+						<td>Donec Nibh Enim Ltd</td>
+						<td>78</td>
+						<td>X366</td>
+						<td>1</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>AP</td>
+						<td>Saint Lucia</td>
+						<td>Morbi Ltd</td>
+						<td>67</td>
+						<td>D185</td>
+						<td>0</td>
+						<td>6</td>
+					</tr>
+					<tr>
+						<td>Noord Brabant</td>
+						<td>Moldova</td>
+						<td>Posuere Cubilia Incorporated</td>
+						<td>02</td>
+						<td>X864</td>
+						<td>2</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>Salzburg</td>
+						<td>Montserrat</td>
+						<td>Tincidunt Adipiscing Mauris Consulting</td>
+						<td>06</td>
+						<td>U981</td>
+						<td>8</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>Washington</td>
+						<td>China</td>
+						<td>Interdum Ligula Inc.</td>
+						<td>76</td>
+						<td>J103</td>
+						<td>6</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>WA</td>
+						<td>Malaysia</td>
+						<td>Elit Curabitur Sed Foundation</td>
+						<td>84</td>
+						<td>X744</td>
+						<td>9</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>KD</td>
+						<td>Trinidad and Tobago</td>
+						<td>Ultrices Sit Foundation</td>
+						<td>79</td>
+						<td>J046</td>
+						<td>8</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>EX</td>
+						<td>Argentina</td>
+						<td>Consectetuer Adipiscing Consulting</td>
+						<td>99</td>
+						<td>K663</td>
+						<td>2</td>
+						<td>7</td>
+					</tr>
+					<tr>
+						<td>Wie</td>
+						<td>Serbia</td>
+						<td>Ullamcorper Eu Limited</td>
+						<td>16</td>
+						<td>A623</td>
+						<td>9</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>CO</td>
+						<td>Colombia</td>
+						<td>Justo Incorporated</td>
+						<td>32</td>
+						<td>V454</td>
+						<td>6</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>Biobío</td>
+						<td>Lebanon</td>
+						<td>Maecenas Iaculis Inc.</td>
+						<td>95</td>
+						<td>V551</td>
+						<td>3</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>Valparaíso</td>
+						<td>United States</td>
+						<td>Vulputate Lacus Cras Ltd</td>
+						<td>98</td>
+						<td>I547</td>
+						<td>4</td>
+						<td>6</td>
+					</tr>
+					<tr>
+						<td>QLD</td>
+						<td>Bulgaria</td>
+						<td>Ac Orci Ut Foundation</td>
+						<td>02</td>
+						<td>I534</td>
+						<td>7</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>Stockholms län</td>
+						<td>Ukraine</td>
+						<td>Curabitur Consequat Lectus PC</td>
+						<td>45</td>
+						<td>B974</td>
+						<td>3</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>IL</td>
+						<td>Lithuania</td>
+						<td>Nisl Quisque Corporation</td>
+						<td>92</td>
+						<td>G528</td>
+						<td>3</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>LX</td>
+						<td>Uzbekistan</td>
+						<td>Ut Erat Limited</td>
+						<td>40</td>
+						<td>H894</td>
+						<td>1</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>ON</td>
+						<td>Iraq</td>
+						<td>Cursus Luctus Ipsum Consulting</td>
+						<td>17</td>
+						<td>Q566</td>
+						<td>7</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>WY</td>
+						<td>Cuba</td>
+						<td>Feugiat Industries</td>
+						<td>73</td>
+						<td>S306</td>
+						<td>4</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>VA</td>
+						<td>Guernsey</td>
+						<td>Congue Elit Incorporated</td>
+						<td>03</td>
+						<td>M059</td>
+						<td>7</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>Biobío</td>
+						<td>Jersey</td>
+						<td>Erat Corp.</td>
+						<td>15</td>
+						<td>Y047</td>
+						<td>3</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>Western Australia</td>
+						<td>Malaysia</td>
+						<td>Consectetuer Adipiscing LLP</td>
+						<td>37</td>
+						<td>V724</td>
+						<td>2</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>Hamburg</td>
+						<td>French Polynesia</td>
+						<td>Eleifend Company</td>
+						<td>30</td>
+						<td>V550</td>
+						<td>1</td>
+						<td>7</td>
+					</tr>
+					<tr>
+						<td>Hamburg</td>
+						<td>Kenya</td>
+						<td>Convallis In Cursus Consulting</td>
+						<td>60</td>
+						<td>B237</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>PR</td>
+						<td>Liberia</td>
+						<td>Vitae LLP</td>
+						<td>46</td>
+						<td>A188</td>
+						<td>9</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>MA</td>
+						<td>Lesotho</td>
+						<td>Proin Industries</td>
+						<td>92</td>
+						<td>Y255</td>
+						<td>5</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>TOS</td>
+						<td>Chile</td>
+						<td>Egestas LLC</td>
+						<td>72</td>
+						<td>Y978</td>
+						<td>2</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>Jönköpings län</td>
+						<td>Saint Vincent and The Grenadines</td>
+						<td>Accumsan Convallis Foundation</td>
+						<td>28</td>
+						<td>P396</td>
+						<td>7</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>California</td>
+						<td>Congo, the Democratic Republic of the</td>
+						<td>Nulla Semper Consulting</td>
+						<td>31</td>
+						<td>B920</td>
+						<td>7</td>
+						<td>6</td>
+					</tr>
+					<tr>
+						<td>SIC</td>
+						<td>Azerbaijan</td>
+						<td>Lorem Fringilla Limited</td>
+						<td>82</td>
+						<td>V723</td>
+						<td>7</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>São Paulo</td>
+						<td>Latvia</td>
+						<td>Nunc Quis Consulting</td>
+						<td>08</td>
+						<td>R531</td>
+						<td>6</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>G</td>
+						<td>Canada</td>
+						<td>Facilisis Non LLP</td>
+						<td>56</td>
+						<td>F755</td>
+						<td>7</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>DB</td>
+						<td>Pitcairn Islands</td>
+						<td>Felis Nulla Consulting</td>
+						<td>13</td>
+						<td>L442</td>
+						<td>7</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>Ontario</td>
+						<td>Switzerland</td>
+						<td>Sit Amet Ornare Associates</td>
+						<td>45</td>
+						<td>X984</td>
+						<td>5</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>North Island</td>
+						<td>Bangladesh</td>
+						<td>Ultrices Duis Inc.</td>
+						<td>24</td>
+						<td>U459</td>
+						<td>9</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>Istanbul</td>
+						<td>Eritrea</td>
+						<td>Cursus Integer Associates</td>
+						<td>47</td>
+						<td>P584</td>
+						<td>4</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Kansas</td>
+						<td>Marshall Islands</td>
+						<td>Erat Vivamus Nisi Limited</td>
+						<td>28</td>
+						<td>S005</td>
+						<td>8</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>TOS</td>
+						<td>Libya</td>
+						<td>Felis Nulla Tempor Corporation</td>
+						<td>68</td>
+						<td>X359</td>
+						<td>8</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>Karnataka</td>
+						<td>Palau</td>
+						<td>Nulla Magna Malesuada Consulting</td>
+						<td>92</td>
+						<td>L111</td>
+						<td>9</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Western Australia</td>
+						<td>Jamaica</td>
+						<td>Integer Id LLP</td>
+						<td>16</td>
+						<td>H072</td>
+						<td>3</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>Dorset</td>
+						<td>Suriname</td>
+						<td>Odio Auctor Corp.</td>
+						<td>32</td>
+						<td>W625</td>
+						<td>0</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>Osun</td>
+						<td>Israel</td>
+						<td>Quisque Ac Foundation</td>
+						<td>42</td>
+						<td>E912</td>
+						<td>5</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>LOM</td>
+						<td>Antarctica</td>
+						<td>Dolor Corporation</td>
+						<td>04</td>
+						<td>K532</td>
+						<td>2</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>Leinster</td>
+						<td>Dominica</td>
+						<td>Orci Luctus Et Foundation</td>
+						<td>46</td>
+						<td>F141</td>
+						<td>0</td>
+						<td>7</td>
+					</tr>
+					<tr>
+						<td>Ulster</td>
+						<td>Paraguay</td>
+						<td>Tellus Nunc Lectus Company</td>
+						<td>88</td>
+						<td>G176</td>
+						<td>7</td>
+						<td>6</td>
+					</tr>
+					<tr>
+						<td>NI</td>
+						<td>Bahrain</td>
+						<td>Nunc Sed Incorporated</td>
+						<td>68</td>
+						<td>C362</td>
+						<td>3</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>CAM</td>
+						<td>Northern Mariana Islands</td>
+						<td>Dui Lectus Rutrum LLP</td>
+						<td>88</td>
+						<td>H858</td>
+						<td>9</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>G</td>
+						<td>Burundi</td>
+						<td>Quisque Purus Sapien LLP</td>
+						<td>74</td>
+						<td>K242</td>
+						<td>0</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>Stockholms län</td>
+						<td>Kenya</td>
+						<td>Hendrerit Ltd</td>
+						<td>41</td>
+						<td>R855</td>
+						<td>7</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>North Island</td>
+						<td>Guyana</td>
+						<td>Tempus Risus Donec Inc.</td>
+						<td>83</td>
+						<td>D606</td>
+						<td>5</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>VIC</td>
+						<td>United States</td>
+						<td>Dolor Sit Amet Ltd</td>
+						<td>12</td>
+						<td>C447</td>
+						<td>6</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>Andalucía</td>
+						<td>Bahamas</td>
+						<td>Hendrerit Donec Porttitor Ltd</td>
+						<td>61</td>
+						<td>B956</td>
+						<td>3</td>
+						<td>7</td>
+					</tr>
+					<tr>
+						<td>O</td>
+						<td>Curaçao</td>
+						<td>Lacus Nulla LLP</td>
+						<td>56</td>
+						<td>Q050</td>
+						<td>2</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>Wie</td>
+						<td>Nepal</td>
+						<td>Magna A Tortor Industries</td>
+						<td>96</td>
+						<td>L819</td>
+						<td>3</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>Vienna</td>
+						<td>Mozambique</td>
+						<td>Ac Corporation</td>
+						<td>38</td>
+						<td>P006</td>
+						<td>3</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>W</td>
+						<td>Guinea</td>
+						<td>Curae; Donec Tincidunt LLC</td>
+						<td>76</td>
+						<td>A965</td>
+						<td>5</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>G</td>
+						<td>Timor-Leste</td>
+						<td>Lorem Ut LLC</td>
+						<td>03</td>
+						<td>P736</td>
+						<td>1</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>Lombardia</td>
+						<td>Lebanon</td>
+						<td>Cras PC</td>
+						<td>75</td>
+						<td>M930</td>
+						<td>3</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>GL</td>
+						<td>China</td>
+						<td>Sapien Molestie Orci Corp.</td>
+						<td>10</td>
+						<td>D526</td>
+						<td>7</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>São Paulo</td>
+						<td>Malaysia</td>
+						<td>Elementum At Egestas Consulting</td>
+						<td>66</td>
+						<td>M212</td>
+						<td>3</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>Berlin</td>
+						<td>Taiwan</td>
+						<td>Aliquam Foundation</td>
+						<td>43</td>
+						<td>J880</td>
+						<td>9</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>San José</td>
+						<td>Cyprus</td>
+						<td>Faucibus Ut Corp.</td>
+						<td>54</td>
+						<td>O528</td>
+						<td>5</td>
+						<td>7</td>
+					</tr>
+					<tr>
+						<td>AB</td>
+						<td>Dominica</td>
+						<td>Eget Mollis Lectus Associates</td>
+						<td>64</td>
+						<td>L071</td>
+						<td>2</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>DE</td>
+						<td>Finland</td>
+						<td>Semper Tellus Industries</td>
+						<td>02</td>
+						<td>C284</td>
+						<td>1</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>WV</td>
+						<td>Armenia</td>
+						<td>Ridiculus Foundation</td>
+						<td>84</td>
+						<td>U531</td>
+						<td>3</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>Kano</td>
+						<td>Bolivia</td>
+						<td>Mi Institute</td>
+						<td>95</td>
+						<td>T237</td>
+						<td>3</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>CH</td>
+						<td>Tunisia</td>
+						<td>Mattis Company</td>
+						<td>51</td>
+						<td>L855</td>
+						<td>0</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>Quebec</td>
+						<td>Liberia</td>
+						<td>Nec Ltd</td>
+						<td>18</td>
+						<td>L205</td>
+						<td>5</td>
+						<td>6</td>
+					</tr>
+					<tr>
+						<td>ME</td>
+						<td>Bonaire, Sint Eustatius and Saba</td>
+						<td>Integer Sem Elit Limited</td>
+						<td>55</td>
+						<td>A271</td>
+						<td>0</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>Wie</td>
+						<td>Myanmar</td>
+						<td>Et PC</td>
+						<td>99</td>
+						<td>Y284</td>
+						<td>0</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>Connecticut</td>
+						<td>Cuba</td>
+						<td>Semper Et Lacinia Inc.</td>
+						<td>08</td>
+						<td>E086</td>
+						<td>5</td>
+						<td>7</td>
+					</tr>
+					<tr>
+						<td>Mer</td>
+						<td>Kiribati</td>
+						<td>Sem Consequat Institute</td>
+						<td>75</td>
+						<td>K612</td>
+						<td>6</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>Koc</td>
+						<td>Palestine, State of</td>
+						<td>Risus Donec Nibh PC</td>
+						<td>87</td>
+						<td>U163</td>
+						<td>8</td>
+						<td>7</td>
+					</tr>
+					<tr>
+						<td>Östergötlands län</td>
+						<td>Colombia</td>
+						<td>Cursus Et Magna Corporation</td>
+						<td>70</td>
+						<td>J029</td>
+						<td>6</td>
+						<td>6</td>
+					</tr>
+					<tr>
+						<td>XII</td>
+						<td>Saint Vincent and The Grenadines</td>
+						<td>Tortor Limited</td>
+						<td>35</td>
+						<td>V735</td>
+						<td>4</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>Queensland</td>
+						<td>Monaco</td>
+						<td>Et Industries</td>
+						<td>59</td>
+						<td>Q675</td>
+						<td>0</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>LB</td>
+						<td>Isle of Man</td>
+						<td>Mi Lorem Vehicula LLP</td>
+						<td>03</td>
+						<td>L527</td>
+						<td>1</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>SL</td>
+						<td>Spain</td>
+						<td>Turpis Non Enim Company</td>
+						<td>73</td>
+						<td>D394</td>
+						<td>3</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>Catalunya</td>
+						<td>Spain</td>
+						<td>Fusce Mollis Duis Incorporated</td>
+						<td>66</td>
+						<td>U544</td>
+						<td>8</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>HR</td>
+						<td>Montenegro</td>
+						<td>Quisque Institute</td>
+						<td>90</td>
+						<td>J699</td>
+						<td>3</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>HE</td>
+						<td>Croatia</td>
+						<td>Odio Vel Est Ltd</td>
+						<td>51</td>
+						<td>V687</td>
+						<td>8</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>Liguria</td>
+						<td>Vanuatu</td>
+						<td>Rhoncus Nullam Velit Ltd</td>
+						<td>54</td>
+						<td>G901</td>
+						<td>3</td>
+						<td>6</td>
+					</tr>
+					<tr>
+						<td>GJ</td>
+						<td>Uruguay</td>
+						<td>Scelerisque Institute</td>
+						<td>27</td>
+						<td>B347</td>
+						<td>7</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>Stockholms län</td>
+						<td>Saudi Arabia</td>
+						<td>Tincidunt Adipiscing Mauris Incorporated</td>
+						<td>58</td>
+						<td>S677</td>
+						<td>9</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>Lazio</td>
+						<td>French Guiana</td>
+						<td>Nullam Feugiat Placerat Ltd</td>
+						<td>55</td>
+						<td>P751</td>
+						<td>6</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>Odisha</td>
+						<td>Serbia</td>
+						<td>Aliquet Proin Velit Associates</td>
+						<td>53</td>
+						<td>W471</td>
+						<td>4</td>
+						<td>6</td>
+					</tr>
+					<tr>
+						<td>North Island</td>
+						<td>Dominican Republic</td>
+						<td>Fusce Inc.</td>
+						<td>04</td>
+						<td>C811</td>
+						<td>4</td>
+						<td>7</td>
+					</tr>
+					<tr>
+						<td>AB</td>
+						<td>Venezuela</td>
+						<td>Ut Eros Non Foundation</td>
+						<td>92</td>
+						<td>C845</td>
+						<td>3</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>MA</td>
+						<td>Nigeria</td>
+						<td>Ipsum Nunc Id Foundation</td>
+						<td>94</td>
+						<td>W738</td>
+						<td>6</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>NI</td>
+						<td>Italy</td>
+						<td>Auctor Ullamcorper Nisl Inc.</td>
+						<td>75</td>
+						<td>H559</td>
+						<td>6</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>HB</td>
+						<td>Mauritius</td>
+						<td>Sed Industries</td>
+						<td>03</td>
+						<td>W856</td>
+						<td>6</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>SI</td>
+						<td>Uzbekistan</td>
+						<td>Ut Corporation</td>
+						<td>72</td>
+						<td>A567</td>
+						<td>0</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>IN</td>
+						<td>Hong Kong</td>
+						<td>Aliquam Incorporated</td>
+						<td>71</td>
+						<td>O556</td>
+						<td>5</td>
+						<td>6</td>
+					</tr>
+					<tr>
+						<td>Texas</td>
+						<td>Portugal</td>
+						<td>Eu Eleifend Nec PC</td>
+						<td>52</td>
+						<td>L141</td>
+						<td>1</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>Hatay</td>
+						<td>Brunei</td>
+						<td>Facilisis Magna Industries</td>
+						<td>10</td>
+						<td>C279</td>
+						<td>3</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>Gävleborgs län</td>
+						<td>Luxembourg</td>
+						<td>Iaculis Odio Nam Foundation</td>
+						<td>19</td>
+						<td>G113</td>
+						<td>4</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>Anambra</td>
+						<td>Sri Lanka</td>
+						<td>Nec Inc.</td>
+						<td>80</td>
+						<td>R501</td>
+						<td>7</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>Atacama</td>
+						<td>Tanzania</td>
+						<td>Ante LLC</td>
+						<td>46</td>
+						<td>F682</td>
+						<td>5</td>
+						<td>7</td>
+					</tr>
+					<tr>
+						<td>GA</td>
+						<td>Ethiopia</td>
+						<td>Nec Mauris Industries</td>
+						<td>35</td>
+						<td>P560</td>
+						<td>7</td>
+						<td>8</td>
+					</tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Area</th>
+                  <th>Country</th>
+                  <th>Operator</th>
+                  <th>Qty</th>
+                  <th>Type</th>
+                  <th>Platforms in service</th>
+                  <th>Future platforms</th>
+                </tr>
+                </tfoot>
+              </table>
+              </div>
+              
+              <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+          </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script>
+    $("#example1").DataTable();
+    </script>
+{% endblock %}
+

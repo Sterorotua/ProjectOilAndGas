@@ -1,0 +1,297 @@
+{% extends "CoreBundle::mainLayout.html.twig" %}
+
+{% block title %}{{ parent() }}{{ data['name'] }}{% endblock %}
+
+{% block css %}
+    {{parent()}}
+    <link rel="stylesheet" href="{{ asset('bundles/core/css/css/helicoptr.css') }}">
+{% endblock %}
+
+{% block header_content %}
+    <h1>
+        {% if data['name'] is defined and data['oilCompany'] is defined %}
+            #{{ data['id'] }} {{ data['oilCompany'] }} - {{ data['name'] }}
+        {% elseif data['name'] is defined %}
+            Missing Oil Company - {{ data['name'] }}
+        {% else %}
+            Missing Oil Company - Missing Platform Name
+        {% endif %}
+    </h1>
+    <div class="breadcrumb btn-group">
+        <button id="edit_platform_btn" type="button" class="btn btn-primary btn-flat btn-xs" data-toggle="modal" data-backdrop="static" data-target="#platform_edit_modal">
+            <i class="fa fa-edit"></i>
+            Edit
+        </button>
+    </div>
+{% endblock %}
+
+{% block page_content %}
+    <div class="row">
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-light-blue">
+                    <i class="icon-platform"></i>
+                </span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Oil Company</span>
+                    <span class="info-box-number">
+                        {% if data['oilCompany'] is defined %}
+                            {{ data['oilCompany'] }}
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-blue">
+                    <i class="icon-helipad"></i>
+                </span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Base</span>
+                    <span class="info-box-number">
+                        {% if data['base'] is defined %}
+                            {{ data['base'].name }}
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-gray">
+                    <i class="fa fa-globe"></i>
+                </span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Country</span>
+                    <span class="info-box-number">
+                        {% if data['country'] is defined %}
+                            {{ data['country'] }}
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+                <span class="info-box-icon bg-light-blue">
+                    <i class="fa fa-tag"></i>
+                </span>
+                <div class="info-box-content">
+                    <span class="info-box-text">Platform Status</span>
+                    <span class="info-box-number">
+                        {% if data['platformStatus'] is defined %}
+                            {{ data['platformStatus'] }}
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="box box-solid box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><i class="icon fa fa-calendar"></i> Platform Timing</h3>
+                </div>
+                <div class="box-body">
+                    <p><span style="font-weight: bold">Operational Year : </span><span class="pull-right">{{ data['startYear'] }}</span></p>
+                    <p><span style="font-weight: bold">Current Year : </span><span class="pull-right">{{ "now"|date("Y") }}</span></p>
+                    <p><span style="font-weight: bold">Removal Year : </span><span class="pull-right">{{ data['removalYear'] }}</span></p>
+                    {% if data['removalYear'] != "Unknown" and data['startYear'] != "Unknown" and data['removalYear'] != null and data['startYear'] != null %}
+                        <div class="progress active">
+                            <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" aria-valuemin="0" aria-valuemax="{{ data['removalYear']-data['startYear'] }}" aria-valuenow="{{ ("now"|date("Y"))-data['startYear'] }}" style="width: {{ ((("now"|date("Y"))-data['startYear']) / (data['removalYear']-data['startYear']) * 100)|round }}%">
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="box box-solid box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><i class="icon icon-helipad"></i> Helideck Data</h3>
+                </div>
+                <div class="box-body">
+                    <p><span style="font-weight: bold">Helideck D-Value : </span><span class="pull-right">{{ data['dValue'] }}m</span></p>
+                    <p><span style="font-weight: bold">Helideck T-Value : </span><span class="pull-right">{{ data['tValue'] }}m</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="box box-solid box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><i class="icon fa fa-flag"></i> Distance</h3>
+                </div>
+                <div class="box-body">
+                    <p><span style="font-weight: bold">Nearest Base Distance : </span><span class="pull-right">{{ data['distance']|round(2, 'common') }} nm</span></p>
+                    <p><span style="font-weight: bold">Coast Distance : </span><span class="pull-right">{{ data['coastDistance']|round(2, 'common') }} nm</span></p>
+                </div>
+            </div>
+            <div class="box box-solid box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><i class="icon fa fa-info"></i> Refuelling and Employees</h3>
+                </div>
+                <div class="box-body">
+                    <p>
+                        <span style="font-weight: bold">Available Refuelling :
+                            {% if data['refuellingOption'] == "Available" %}
+                                <i class="icon fa fa-check pull-right"></i>
+                            {% else %}
+                                <i class="icon fa fa-times pull-right"></i>
+                            {% endif %}
+                        </span>
+                    </p>
+                    <p><span style="font-weight: bold">Bunked Bed Number : </span><span class="pull-right">{{ data['bunkedBedNumber'] }}</span></p>
+                </div>
+            </div>
+            <div class="box box-solid box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><i class="icon fa fa-map"></i> Global Positioning Data</h3>
+                </div>
+                <div class="box-body">
+                    <p><span style="font-weight: bold">Latitude : </span><span class="pull-right">{{ data['gps'].lat }}</span></p>
+                    <p><span style="font-weight: bold">Longitude : </span><span class="pull-right">{{ data['gps'].lng }}</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Localisation</h3>
+                </div>
+                <div class="box-body">
+                    <div id="world-map" style="height: 220px">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <input id="id" type="text" style="display: none" value="{{ data['id'] }}">
+{% endblock %}
+
+{% block modal %}
+    <!-- Modal -->
+    <div class="modal fade" id="platform_edit_modal" tabindex="-1" role="dialog" aria-labelledby="edit_platform_modal_label">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h3>Edit platform data</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4>
+                            <i class="icon fa fa-warning"></i>
+                            Important note !
+                        </h4>
+                        You don't need to fill the fields you don't wish to edit, just jump to the fields you are looking for.
+                    </div>
+                    <form role="form" id="edit_platform_form" method="post">
+                        <div id="myModalFormContent">
+
+                            <div class="nav-tabs-custom">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li><a href="#tab1" data-toggle="tab">1. Main Data</a></li>
+                                    <li><a href="#tab2" data-toggle="tab">2. Helideck Data</a></li>
+                                    <li><a href="#tab3" data-toggle="tab">3. Timing</a></li>
+                                    <li><a href="#tab4" data-toggle="tab">4. Performance</a></li>
+                                </ul>
+                            </div>
+                            <div class="progress active">
+                                <div class="progress-bar progress-bar-striped" id="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                                </div>
+                            </div>
+                            <input id="hiddenId" type="text" value="{{ data['id'] }}" style="display: none"/>
+
+                            <div class="tab-content">
+                                <div role="tab-panel" class="tab-pane" id="tab1">
+                                    <div class="form-group">
+                                        <label>Oil Company</label><br>
+                                        <select name="edit_platform_oil_company" id="edit_platform_oil_company" autocomplete="off" class="select2 form-control" title="Edit oil company..." required>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Base</label><br>
+                                        <select name="edit_platform_base" id="edit_platform_base" autocomplete="off" class="select2 form-control" title="Edit operational base..." required>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Platform Status</label><br>
+                                        <select name="edit_platform_status" id="edit_platform_status" autocomplete="off" class="select2 form-control" title="Edit current platform status...">
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div role="tab-panel" class="tab-pane" id="tab2">
+                                    <label>Helideck D-Value</label><br>
+                                    <div class="input-group">
+                                        <input type="text" name="edit_platform_dValue" id="edit_platform_dValue" autocomplete="off" class="form-control" placeholder="Edit platform helidick D-value...">
+                                        <span class="input-group-addon">m</span>
+                                    </div>
+                                    <label>Helideck T-Value</label><br>
+                                    <div class="input-group">
+                                        <input type="text" name="edit_platform_tValue" id="edit_platform_tValue" autocomplete="off" class="form-control" placeholder="Edit platform helidick T-value...">
+                                        <span class="input-group-addon">m</span>
+                                    </div>
+                                </div>
+                                <div role="tab-panel" class="tab-pane" id="tab3">
+                                    <div class="form-group">
+                                        <label>Platform Operations Start Date</label><br>
+                                        <input type="text" name="edit_platform_start_date" id="edit_platform_start_date" autocomplete="off" class="form-control datepicker" placeholder="Edit contract start date...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Platform Removal Date</label><br>
+                                        <input type="text" name="edit_platform_end_date" id="edit_platform_end_date" autocomplete="off" class="form-control datepicker" placeholder="Edit contract end date...">
+                                    </div>
+                                </div>
+
+                                <div role="tab-panel" class="tab-pane" id="tab4">
+                                    <label>Nearest Base Distance</label>
+                                    <div class="input-group">
+                                        <input type="text" name="edit_platform_nearest_base_distance" id="edit_platform_nearest_base_distance" autocomplete="off" class="form-control" placeholder="Edit platform nearest base distance...">
+                                        <span class="input-group-addon">nm</span>
+                                    </div>
+                                    <label>Distance to Coast</label>
+                                    <div class="input-group">
+                                        <input type="text" name="edit_platform_coast_distance" id="edit_platform_coast_distance" autocomplete="off" class="form-control" placeholder="Edit platform distance to coast...">
+                                        <span class="input-group-addon">nm</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="edit_platform_bunked_bed_number">Bunked Bed Number</label>
+                                        <input type="text" name="edit_platform_bunked_bed_number" id="edit_platform_bunked_bed_number" autocomplete="off" class="form-control" placeholder="Edit platform bunked bed number...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Is refuelling option enabled for this platform ?
+                                            <input type="checkbox" class="icheck" name="edit_platform_refuelling_option" id="edit_platform_refuelling_option" autocomplete="off">
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="hiddenId" id="hiddenId" value="{{ data['id'] }}" class="hidden">
+                                    </div>
+                                </div>
+                                <ul class="pager wizard">
+                                    <li class="previous"><a href="javascript:;">Previous</a></li>
+                                    <li class="next"><a href="javascript:;">Next</a></li>
+                                    <li class="next finish" style="display:none;"><a href="javascript:;">Save</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Modal -->
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/oilindustry/js/platformDetailModule.js') }}"></script>
+{% endblock %}
+

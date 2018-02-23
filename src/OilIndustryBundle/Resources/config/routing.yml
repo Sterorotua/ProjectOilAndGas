@@ -1,0 +1,39 @@
+_oilCompany:
+    path:       /oilActivity/oilCompany
+    defaults:   { _controller: OilIndustryBundle:OilCompany:index }
+    
+_oilCountry:
+    path:       /oilActivity/oilCountries
+    defaults:   { _controller: OilIndustryBundle:OilCountry:index }
+    
+
+        
+         
+
+_platforms:
+    path:       /oilActivity/platforms
+    defaults:   { _controller: OilIndustryBundle:Platforms:index }
+
+_platform_detail:
+    path:       /oilActivity/platforms/details/{id}
+    defaults:   { _controller: OilIndustryBundle:Platforms:platformDetail }
+    options:
+        expose: true
+
+_platform_detail_map:
+    path:       /oilActivity/platforms/details/{id}/map
+    defaults:   { _controller: OilIndustryBundle:Platforms:platformDetailMap }
+    options:
+        expose: true
+
+_platform_initialize_form:
+    path:       /oilActivity/platforms/details/{id}/initializeEditForm
+    defaults:   { _controller: OilIndustryBundle:Platforms:initializeEditPlatformForm }
+    options:
+        expose: true
+
+_platform_edit:
+    path:       /oilActivity/platforms/details/{id}/edit
+    defaults:   { _controller: OilIndustryBundle:Platforms:editPlatform }
+    options:
+        expose: true

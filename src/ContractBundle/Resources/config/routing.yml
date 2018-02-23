@@ -1,0 +1,188 @@
+_contracts:
+    path:       /contracts
+    defaults:   { _controller: ContractBundle:Contract:index }
+    options:
+        expose: true
+    
+_contracts_search:
+    path:       /contracts/search
+    defaults:   { _controller: ContractBundle:Contract:search }
+    methods:    [post]
+    options:
+        expose: true
+        
+_contract_initializeForm:
+    path:       /contracts/initializeForm/{id}
+    defaults:   { _controller: ContractBundle:Contract:initializeAddForm, id: null }
+    methods:    [post]
+    options:
+        expose: true
+        
+_contract_add:
+    path:       /contracts/add
+    defaults:   { _controller: ContractBundle:Contract:addContract }
+    methods:    [post]
+    options:
+        expose: true
+        
+_contract_edit:
+    path:       /contracts/detail/{id}/edit
+    defaults:   { _controller: ContractBundle:Contract:editContract }
+    methods:    [post]
+    options:
+        expose: true
+        
+        
+_contract_detail:
+    path:       /contracts/detail/{id}
+    defaults:   { _controller: ContractBundle:Contract:showContractDetail }
+    options:
+        expose: true
+        
+_contract_detail_map:
+    path:       /contracts/detail/{id}/map
+    defaults:   { _controller: ContractBundle:Contract:initializeMap }
+    methods:    [post]
+    options:
+        expose: true
+        
+_contract_comment_add:
+    path:       /contracts/detail/{id}/addComment
+    defaults:   { _controller: ContractBundle:Contract:addComment }
+    methods:    [post]
+    options:
+        expose: true
+        
+_helicopter_find:
+    path:       /findHelicopterFiltered
+    defaults:   { _controller: ContractBundle:Contract:findHelicopterFiltered }
+    methods:    [post]
+    options:
+        expose: true
+
+_contract_archive:
+    path:       /projects/detail/archive/{id}
+    defaults:   { _controller: ContractBundle:Contract:archive }
+    methods:    [post]
+    options:
+        expose: true
+        
+_contract_delete:
+    path:       /delete/{id}
+    defaults:   { _controller: ContractBundle:Contract:delete }
+    methods:    [post]
+    options:
+        expose: true
+    
+_projects:
+    path:       /projects
+    defaults:   { _controller: ContractBundle:Project:index }
+    options:
+        expose: true
+    
+_projects_search:
+    path:       /projects/search
+    defaults:   { _controller: ContractBundle:Project:search }
+    methods:    [post]
+    options:
+        expose: true
+ 
+_project_initializeForm:
+    path:       /projects/initializeForm/{id}
+    defaults:   { _controller: ContractBundle:Project:initializeAddForm, id: null }
+    methods:    [post]
+    options:
+        expose: true
+        
+_projects_add:
+    path:       /projects/add
+    defaults:   { _controller: ContractBundle:Project:addProject }
+    methods:    [post]
+    options:
+        expose: true
+        
+_project_edit:
+    path:       /projects/detail/{id}/edit
+    defaults:   { _controller: ContractBundle:Project:editProject }
+    methods:    [post]
+    options:
+        expose: true
+        
+_project_upgrade:
+    path:       /projects/detail/{id}/upgrade
+    defaults:   { _controller: ContractBundle:Project:upgradeProject }
+    methods:    [post]
+    options:
+        expose: true
+        
+_project_detail:
+    path:       /projects/detail/{id}
+    defaults:   { _controller: ContractBundle:Project:showProjectDetail }
+    options:
+        expose: true
+        
+_project_detail_map:
+    path:       /projects/detail/{id}/map
+    defaults:   { _controller: ContractBundle:Project:initializeMap }
+    options:
+        expose: true
+        
+_tenders:
+    path:       /tenders
+    defaults:   { _controller: ContractBundle:Tender:index }
+    options:
+        expose: true
+    
+_tenders_search:
+    path:       /tenders/search
+    defaults:   { _controller: ContractBundle:Tender:search }
+    methods:    [post]
+    options:
+        expose: true
+        
+_tender_initializeForm:
+    path:       /tenders/initializeForm/{id}
+    defaults:   { _controller: ContractBundle:Tender:initializeAddForm, id: null }
+    methods:    [post]
+    options:
+        expose: true
+        
+_tenders_add:
+    path:       /tenders/add
+    defaults:   { _controller: ContractBundle:Tender:addTender }
+    methods:    [post]
+    options:
+        expose: true
+        
+_tender_edit:
+    path:       /tenders/detail/{id}/edit
+    defaults:   { _controller: ContractBundle:Tender:editTender }
+    methods:    [post]
+    options:
+        expose: true
+        
+_tender_detail:
+    path:       /tenders/detail/{id}
+    defaults:   { _controller: ContractBundle:Tender:showTenderDetail }
+    options:
+        expose: true
+        
+_tender_upgrade:
+    path:       /tenders/detail/{id}/upgrade
+    defaults:   { _controller: ContractBundle:Tender:upgradeTender }
+    options:
+        expose: true
+    
+_search_bases:
+    path:       /projects/bases
+    defaults:   { _controller: ContractBundle:Project:searchBases }
+    methods:    [post]
+    options:
+        expose: true
+        
+_search_platforms:
+    path:       /projects/platforms
+    defaults:    { _controller: ContractBundle:Contract:searchPlatforms }
+    methods:    [post]
+    options:
+        expose: true
